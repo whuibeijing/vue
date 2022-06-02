@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: node-expressjs-sample
+spec:
+  rules:
+    - host: www.c5a194a8ee10044eba673c20eb3367611.cn-beijing.alicontainer.com
+      http:
+        paths:
+          - backend:
+              serviceName: node-expressjs-sample
+              servicePort: 3000
+            path: /

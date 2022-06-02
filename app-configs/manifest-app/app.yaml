@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: node-expressjs-sample
+  name: node-expressjs-sample
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: node-expressjs-sample
+  template:
+    metadata:
+      labels:
+        run: node-expressjs-sample
+    spec:
+      containers:
+      - image: ${IMAGE}
+        name: app
